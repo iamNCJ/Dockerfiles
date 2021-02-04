@@ -1,4 +1,4 @@
-FROM nvidia/cudagl:11.0-devel-ubuntu18.04
+FROM nvidia/cudagl:11.1-devel-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
