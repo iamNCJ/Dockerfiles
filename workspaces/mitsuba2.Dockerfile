@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Shanghai
 ENV NVIDIA_DRIVER_CAPABILITIES=graphics,compute,utility
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo git clang-9 libc++-9-dev libc++abi-9-dev cmake ninja-build libz-dev libpng-dev libjpeg-dev libxrandr-dev libxinerama-dev libxcursor-dev python3-dev python3-distutils python3-setuptools
+RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo git clang-9 libc++-9-dev libc++abi-9-dev cmake ninja-build libz-dev libpng-dev libjpeg-dev libxrandr-dev libxinerama-dev libxcursor-dev python3-dev python3-distutils python3-setuptools python3-pip
 
 RUN useradd -rm -d /home/mitsuba -s /bin/bash -g root -G sudo -u 1000 mitsuba && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER mitsuba
