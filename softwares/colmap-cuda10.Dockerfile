@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1.1-devel-ubuntu20.04
+FROM nvidia/cuda:10.2-devel-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -13,6 +13,7 @@ RUN apt-get update && \
     libboost-graph-dev \
     libboost-system-dev \
     libboost-test-dev \
+    libboost-regex-dev \
     libeigen3-dev \
     libsuitesparse-dev \
     libfreeimage-dev \
@@ -21,7 +22,8 @@ RUN apt-get update && \
     libglew-dev \
     qtbase5-dev \
     libqt5opengl5-dev \
-    libcgal-dev
+    libcgal-dev \
+    libcgal-qt5-dev
 
 # Change dir, put all sources under /src
 RUN mkdir /src
