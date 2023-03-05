@@ -11,5 +11,6 @@ USER mitsuba
 WORKDIR /home/mitsuba
 
 RUN git clone --recursive https://github.com/mitsuba-renderer/mitsuba2
-COPY mitsuba.conf /home/mitsuba/mitsuba2/
+COPY mitsuba2.conf /home/mitsuba/mitsuba2/mitsuba.conf
 RUN cd ~/mitsuba2 && mkdir build && cd build && cmake -GNinja .. && ninja
+ENTRYPOINT [ "/bin/bash", "-c", "source /home/mitsuba/mitsuba2/build/setpath.sh && \"$@\"", "-s" ]
